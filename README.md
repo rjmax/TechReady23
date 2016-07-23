@@ -1,1 +1,1 @@
-"# TechReady23" 
+# TechReady23
