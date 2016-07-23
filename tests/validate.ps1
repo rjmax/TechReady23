@@ -1,7 +1,6 @@
 ﻿Param(
-    [string] [Parameter(Mandatory=$true)] $TemplateUri,
-    [string] [Parameter(Mandatory=$true)] $TemplateParameterUri,
+    [string] [Parameter(Mandatory=$true)] $TemplateFile,
     [string] [Parameter(Mandatory=$true)] $rg
     )
     
-Test-AzureRmResourceGroupDeployment -ResourceGroupName $rg -TemplateUri $TemplateUri -TemplateParameterUri $TemplateParameterUri -Verbose
+Test-AzureRmResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $TemplateFile -Verbose
