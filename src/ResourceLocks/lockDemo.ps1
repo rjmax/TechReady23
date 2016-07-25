@@ -26,6 +26,8 @@ if(Find-AzureRmResource -ResourceGroupNameContains LockDemo -ResourceType Micros
 Write-Host "Removing the lock"
 Remove-AzureRmResourceLock -LockName myLock -ResourceGroupName LockDemo -ResourceType Microsoft.Storage/storageAccounts -ResourceName $name -Force
 
+start-sleep 10
+
 #Try to delete the storage account - this will succeed
 Write-Host "Trying to delete the storage account"
 Remove-AzureRmStorageAccount -ResourceGroupName LockDemo -Name $name
