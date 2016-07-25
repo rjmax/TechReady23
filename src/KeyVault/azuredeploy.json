@@ -16,7 +16,7 @@
     },
     "dnsLabelPrefix": {
         "type": "string",
-        "defaultValue": 
+        "defaultValue": "[uniqueString(resourceGroup().id)]",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
