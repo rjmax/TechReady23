@@ -1,0 +1,20 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "ryan"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/9167af2d-c13e-4d34-9a57-8f37dba6ff31/resourceGroups/KeyVaultDemo/providers/Microsoft.KeyVault/vaults/TR23"
+        },
+        "secretName": "MySecret"
+      }
+    }
+    "windowsOSVersion": {
+      "value": "2012-R2-Datacenter"
+    }
+  }
+}
