@@ -3,9 +3,10 @@
 #Create resource group
 New-AzureRmResourceGroup -Name LockDemo -Location westus -Force
 
-$deploymentName = (Get-Date).ToString()
+$deploymentName = Get-Random
 
 #Deploy storage account and lock it
 $deployment = New-AzureRmResourceGroupDeployment -ResourceGroupName LockDemo -TemplateUri $TemplateUri -Name $deploymentName
 
 #Get the storage account we just created
+$deployment.Outputs
