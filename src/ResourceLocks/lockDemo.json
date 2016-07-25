@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": { },
+    "variables": {
+        "name": "[uniqueString(resourceGroup().id, deployment().name)]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('name')]",
+            "apiVersion": "2015-06-15",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "accountType": "Standard_LRS"
+            }
+        },
+        {
+            "name": "[concat(variables('name'), '/Microsoft.Authorization/myLock')]",
+            "type": "Microsoft.Storage/storageAccounts/providers/locks",
+            "dependsOn": ["[resourceId('Microsoft.Storage/storageAccounts',variables('name'))"],
+            "apiVersion": "2015-01-01",
+            "properties": {
+                "level": "CannotDelete"
+            }
+        }
+    ]
+}
