@@ -18,11 +18,17 @@
         {
             "name": "[concat(variables('name'), '/Microsoft.Authorization/myLock')]",
             "type": "Microsoft.Storage/storageAccounts/providers/locks",
-            "dependsOn": ["[resourceId('Microsoft.Storage/storageAccounts',variables('name'))"],
+            "dependsOn": [ "[resourceId('Microsoft.Storage/storageAccounts',variables('name'))" ],
             "apiVersion": "2015-01-01",
             "properties": {
                 "level": "CannotDelete"
             }
         }
-    ]
+    ],
+    "outputs": {
+        "name": {
+            "type": "string",
+            "value": "[variables('name')]"
+        }
+    }
 }
