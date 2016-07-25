@@ -1,0 +1,1 @@
+-TemplateFile $(Build.SourcesDirectory)\src\demoTemplate.json -rg blah

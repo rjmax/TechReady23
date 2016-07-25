@@ -11,3 +11,4 @@ $operations = Get-AzureRmResourceGroupDeploymentOperation -ResourceGroupName Key
 write-host "id: "$operations[0].id
 write-host "operationId: "$operations[0].operationId
 $operations[0] | Select -ExpandProperty properties
+$operations[0] | Select -ExpandProperty properties | Select -ExpandProperty targetResource
