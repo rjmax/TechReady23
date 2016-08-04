@@ -6,7 +6,7 @@
 	"resources": [],
 	"outputs": {
 		"result": {
-			"value": "Hello Again, TechReady23",
+			"value": "Hello Again, PayPal",
 			"type" : "string"
 		}
 	}
